@@ -1,10 +1,15 @@
 import React from 'react';
+
+import { AuthProvider } from './auth/AuthContext';
+import { SocketProvider } from './context/SocketContext';
 import { AppRouter } from './routers/AppRouter';
 
 export const ChatApp = () => {
     return (
-        <div>
-            <AppRouter />
-        </div>
+        <AuthProvider>
+            <SocketProvider>
+                <AppRouter />
+            </SocketProvider>
+        </AuthProvider>
     );
 }
