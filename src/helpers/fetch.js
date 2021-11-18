@@ -2,7 +2,7 @@
 const baseURL = process.env.REACT_APP_API_URL;
 export const fetchWithOutToken = async( endpoint, data, method = 'GET' ) => {
     
-    const url = `${ baseURL }/auth/${ endpoint }`;
+    const url = `${ baseURL }/${ endpoint }`;
 
     if ( method === 'GET' ) {
         const res = await fetch( url );
@@ -22,7 +22,7 @@ export const fetchWithOutToken = async( endpoint, data, method = 'GET' ) => {
 
 export const fetchWithToken = async( endpoint, data, method = 'GET' ) => {
     
-    const url = `${ baseURL }/auth/${ endpoint }`;
+    const url = `${ baseURL }/${ endpoint }`;
     const token = localStorage.getItem('token') || '';
 
     if ( method === 'GET' ) {
